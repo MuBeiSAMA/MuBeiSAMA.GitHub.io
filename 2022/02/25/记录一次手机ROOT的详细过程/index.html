@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>记录一次手机 ROOT 的详细过程 - MuBeiSAMA&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="MuBeiSAMA&#039;s blog"><meta name="msapplication-TileImage" content="/img/avatar.jpeg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MuBeiSAMA&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="我手持的是小米 Redmi K20 Pro, MIUI 12.5，骁龙 855 芯片，用了两年多依旧坚挺。 ROOT 的起因是最近在玩一款单机手游，实在太肝了受不了，想开修改器和加速之类的降低一点难度。当然 ROOT 之后不仅仅是开个修改器，还有很多能力。 小米 ROOT 的方式很多，我大概举例一下："><meta property="og:type" content="blog"><meta property="og:title" content="记录一次手机 ROOT 的详细过程"><meta property="og:url" content="https://mubeisama.github.io/2022/02/25/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%89%8B%E6%9C%BAROOT%E7%9A%84%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B/"><meta property="og:site_name" content="MuBeiSAMA&#039;s blog"><meta property="og:description" content="我手持的是小米 Redmi K20 Pro, MIUI 12.5，骁龙 855 芯片，用了两年多依旧坚挺。 ROOT 的起因是最近在玩一款单机手游，实在太肝了受不了，想开修改器和加速之类的降低一点难度。当然 ROOT 之后不仅仅是开个修改器，还有很多能力。 小米 ROOT 的方式很多，我大概举例一下："><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://s2.loli.net/2022/02/25/Q1IJrPo3RiLqvtk.jpg"><meta property="article:published_time" content="2022-02-25T02:30:08.952Z"><meta property="article:modified_time" content="2022-02-28T04:07:48.351Z"><meta property="article:author" content="朷北"><meta property="article:tag" content="小米/MIUI"><meta property="article:tag" content="ROOT"><meta property="article:tag" content="Magisk"><meta property="article:tag" content="橙狐/OrangeFox"><meta property="article:tag" content="安卓/Android"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://s2.loli.net/2022/02/25/Q1IJrPo3RiLqvtk.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mubeisama.github.io/2022/02/25/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%89%8B%E6%9C%BAROOT%E7%9A%84%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B/"},"headline":"记录一次手机 ROOT 的详细过程","image":["https://s2.loli.net/2022/02/25/Q1IJrPo3RiLqvtk.jpg"],"datePublished":"2022-02-25T02:30:08.952Z","dateModified":"2022-02-28T04:07:48.351Z","author":{"@type":"Person","name":"朷北"},"publisher":{"@type":"Organization","name":"MuBeiSAMA's blog","logo":{"@type":"ImageObject","url":{"text":"朷北"}}},"description":"我手持的是小米 Redmi K20 Pro, MIUI 12.5，骁龙 855 芯片，用了两年多依旧坚挺。 ROOT 的起因是最近在玩一款单机手游，实在太肝了受不了，想开修改器和加速之类的降低一点难度。当然 ROOT 之后不仅仅是开个修改器，还有很多能力。 小米 ROOT 的方式很多，我大概举例一下："}</script><link rel="canonical" href="https://mubeisama.github.io/2022/02/25/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%89%8B%E6%9C%BAROOT%E7%9A%84%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B/"><link rel="alternate" href="/atom.xml" title="MuBeiSAMA&#039;s blog" type="application/atom+xml"><link rel="icon" href="/img/avatar.jpeg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">朷北</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://s2.loli.net/2022/02/25/Q1IJrPo3RiLqvtk.jpg" alt="记录一次手机 ROOT 的详细过程"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-25T02:30:08.952Z" title="2022/2/25 上午10:30:08">2022-02-25</time>发表</span><span class="level-item"><time dateTime="2022-02-28T04:07:48.351Z" title="2022/2/28 下午12:07:48">2022-02-28</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%90%9E%E6%9C%BA/">搞机</a></span><span class="level-item">10 分钟读完 (大约1488个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">记录一次手机 ROOT 的详细过程</h1><div class="content"><p>我手持的是小米 Redmi K20 Pro, MIUI 12.5，骁龙 855 芯片，用了两年多依旧坚挺。</p>
+<p>ROOT 的起因是最近在玩一款单机手游，实在太肝了受不了，想开修改器和加速之类的降低一点难度。当然 ROOT 之后不仅仅是开个修改器，还有很多能力。</p>
+<p>小米 ROOT 的方式很多，我大概举例一下：</p>
+<a id="more"></a>
+<ol>
+<li><p>申请官方内测资格，最简单安全的方式。小米社区直接申请，申请成功后系统可以转为开发版，社区有详细步骤，开发版自带 ROOT 权限。缺点就是需要积分，申请内测资格需要 300 点内测分，还需要答题。我只有 100 多分，太麻烦了，放弃。</p>
+</li>
+<li><p><code>Magisk</code> 补 BOOT，应该是目前最主流的 ROOT 方式。不影响当前系统，稳定版一样可以获取 ROOT 权限，仅依赖 Magisk 就够了，重启也不影响，缺点是每次系统更新都需要重新补 BOOT。</p>
+</li>
+<li><p>刷第三方 Recovery（简称 rec）<code>橙狐</code>再补 BOOT。还是依靠 <code>Magisk</code> 补 BOOT，再通过<code>橙狐</code>刷入，<code>橙狐</code>自带 xiaomi ota，后续系统升级可以通过它来完成，ROOT 权限就能一直存在了。</p>
+</li>
+</ol>
+<p>我采用的是第三种方式，看起来很多术语很复杂，实操起来几分钟就能搞定。</p>
+<h2 id="解-BL-锁"><a href="#解-BL-锁" class="headerlink" title="解 BL 锁"></a>解 BL 锁</h2><p>这应该是目前所有手机 ROOT 的第一步了，小米可以直接访问 <a target="_blank" rel="noopener" href="http://www.miui.com/unlock/index.html">官方解锁地址</a>，按步骤操作，需要手机登陆小米账号满 7 天。</p>
+<p>需要注意<strong>解锁时数据将被清空，一定要提前备份</strong>。<code>小米换机</code>可以 100% 备份所有数据。<code>手机备份</code>打的包只有应用数据，不包含照片和主题，需要额外备份。</p>
+<p>后面的操作解了 BL 锁才能继续，不会再清空数据了，不过以防万一还是留一份备份比较好。</p>
+<h2 id="开始-ROOT"><a href="#开始-ROOT" class="headerlink" title="开始 ROOT"></a>开始 ROOT</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>需要用到的物料：</p>
+<ol>
+<li>联网的 PC 一台</li>
+<li>数据线</li>
+</ol>
+<p>PC 上需要准备的软件：</p>
+<ol>
+<li><code>橙狐</code> 的 <code>recovery.img</code> 文件</li>
+<li><code>Magisk</code> 的安装包</li>
+<li>当前手机系统的 ROM 文件</li>
+<li>【可选】搞机助手</li>
+</ol>
+<h4 id="从橙狐的包中提取-recovery-img"><a href="#从橙狐的包中提取-recovery-img" class="headerlink" title="从橙狐的包中提取 recovery.img"></a>从橙狐的包中提取 recovery.img</h4><p><code>橙狐</code>的包可以<a target="_blank" rel="noopener" href="https://orangefox.download/zh-CN">访问官网</a>，找到自己的手机型号，点下载再点弹窗里的国家节点即可下载。</p>
+<p><img src="https://s2.loli.net/2022/02/25/b8XI3k9wE4Ktiuz.png" alt="图 1"></p>
+<p>下载好后解压压缩包，将里面的 <code>recovery.img</code> 文件提取到自己找得到的地方备用。</p>
+<h4 id="Magisk的安装包"><a href="#Magisk的安装包" class="headerlink" title="Magisk的安装包"></a>Magisk的安装包</h4><p>GitHub 开源软件，访问 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases">Release 页面</a>下载最新版就好。</p>
+<h4 id="当前手机系统的-ROM-包"><a href="#当前手机系统的-ROM-包" class="headerlink" title="当前手机系统的 ROM 包"></a>当前手机系统的 ROM 包</h4><p>访问 <a target="_blank" rel="noopener" href="https://xiaomirom.com/">https://xiaomirom.com/</a> 搜索自己的手机型号，我是 K20 Pro，国外这款手机叫 9T Pro。</p>
+<p><img src="https://s2.loli.net/2022/02/25/vqVUEdncetyxBNI.png" alt="图 2"></p>
+<p>点进去找到和自己一样的 MIUI 版本的包，我的是 V12.5.6.0.RFKCNXM。</p>
+<p><img src="https://s2.loli.net/2022/02/25/YZyK3cW2AxBGzSU.png" alt="图 3"></p>
+<p>下载完成后解压压缩包，将里面的 <code>boot.img</code> 文件提取到自己找得到的地方备用。</p>
+<h4 id="发送到手机"><a href="#发送到手机" class="headerlink" title="发送到手机"></a>发送到手机</h4><p>数据线连接手机，打开 USB 调试。没有 USB 调试就先在 <code>设置-&gt;我的设备-&gt;全部参数</code> 点击 <strong>MIUI 版本</strong>七八次，打开开发者模式，再搜 USB 调试就有了。</p>
+<p>通过数据线将准备好的 <code>Magisk</code> 安装包、<code>recovery.img</code> 和 <code>boot.img</code>  传到手机存储下。</p>
+<h3 id="Magisk-补-BOOT"><a href="#Magisk-补-BOOT" class="headerlink" title="Magisk 补 BOOT"></a>Magisk 补 BOOT</h3><p>在手机上找到发来的 <code>Magisk</code> 安装包，安装。安装好后界面如下：</p>
+<p><img src="https://s2.loli.net/2022/02/28/N9KvGJqV6uED1eZ.jpg" alt="为了阅读体验已旋转 -90deg"></p>
+<p>点击 <code>Magisk</code> 卡片的安装按钮，进入安装详情页。</p>
+<p><img src="https://s2.loli.net/2022/02/28/bf6YAFjk7OiKu5g.jpg" alt="图 5">  </p>
+<p>选项栏什么都不用选直接下一步，方式选中<strong>选择并修补一个文件</strong>，然后选择从 PC 接收的 <code>boot.img</code> 文件开始修补。</p>
+<p>修补成功后会在 download 文件夹生成 <code>magisk_patched_xxxxxx.img</code> 文件。记住这个文件名和的位置，之后会用到。</p>
+<h3 id="刷入橙狐"><a href="#刷入橙狐" class="headerlink" title="刷入橙狐"></a>刷入橙狐</h3><p>保持 PC 和手机的数据线连接，手机关机后开机键+音量下键，进入 fastboot 模式。</p>
+<p>如果电脑上准备好了搞机助手，就在<code>引导模式-&gt;刷入 REC-&gt;选择 Recovery</code>选中准备好的<code>橙狐</code> 的 <code>recovery.img</code> 文件，点击刷入。</p>
+<p>没有搞机助手的话，可以参考<a target="_blank" rel="noopener" href="https://wiki.orangefox.tech/en/guides/installing_orangefox#via-fastboot-and-then-recovery">橙狐官方 wiki</a>，电脑安装 adb，命令行直接输入命令手动刷入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash recovery recovery.img</span><br></pre></td></tr></table></figure>
+<p>刷入后手机会自动进入 <code>橙狐</code> rec，没有自动进入的话也可以在关机后按开机键+音量上键进入。</p>
+<blockquote>
+<p>橙狐的recovery有解密功能启动可能较慢 启动后输入锁屏密码 等待解密 否则无法加载sdcard</p>
+</blockquote>
+<p>输入锁屏密码成功后, <code>橙狐</code> 的首页就是一个文件管理器，找到从 PC 接收的 <code>recovery.img</code>，选中，目标分区选 Recovery。</p>
+<p><img src="https://s2.loli.net/2022/02/28/inKH2lfmQcsoYvP.jpg" alt="图源：Bilibili@LACIAN">  </p>
+<p>成功后先不重启，继续找到之前 <code>Magisk</code> 补好的 <code>magisk_patched_xxxxxx.img</code> 文件，刷入到 Boot 分区，完成后重启。</p>
+<p>开机后就有 ROOT 权限了。</p>
+<p><img src="https://s2.loli.net/2022/02/28/La4DPh27NnQYkiV.jpg" alt="图 8"></p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p><del>之前说 ROOT 后不仅仅是开个修改器。</del></p>
+<p>Magisk 更新导致 zygisk 和 Riru 不兼容，Lsposed 也没法用了。听说有个 zygisk-lsposed 的兼容版，github 也没找到，更新之后再补充。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13745586">https://www.bilibili.com/read/cv13745586</a><br><a target="_blank" rel="noopener" href="https://github.com/LSPosed/LSPosed">https://github.com/LSPosed/LSPosed</a><br><a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>记录一次手机 ROOT 的详细过程</p><p><a href="https://mubeisama.github.io/2022/02/25/记录一次手机ROOT的详细过程/">https://mubeisama.github.io/2022/02/25/记录一次手机ROOT的详细过程/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>朷北</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-02-25</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-02-28</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%B0%8F%E7%B1%B3-MIUI/">小米/MIUI</a><a class="link-muted mr-2" rel="tag" href="/tags/ROOT/">ROOT</a><a class="link-muted mr-2" rel="tag" href="/tags/Magisk/">Magisk</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%A9%99%E7%8B%90-OrangeFox/">橙狐/OrangeFox</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%AE%89%E5%8D%93-Android/">安卓/Android</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=5ea92b1dab8e630012fded35&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/08/02/CSS%E5%9F%BA%E7%A1%80/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">CSS 基础</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/11/12/gitlab%20npm%20package%20%E5%88%9D%E4%BD%93%E9%AA%8C/"><span class="level-item">gitlab npm package 初体验</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "af232133b8d22f8d43fb5cec99c02876",
+            repo: "MuBeiSAMA.github.io",
+            owner: "MuBeiSAMA",
+            clientID: "6d3be8ebf686e8aad111",
+            clientSecret: "58cec2be085c79d064f8eb82cbb3e549eac00158",
+            admin: ["MuBeiSAMA"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpeg" alt="朷北"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">朷北</p><p class="is-size-6 is-block">FE Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>ShangHai</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">27</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/MuBeiSAMA" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/MuBeiSAMA"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Gmail" href="mailto:mubeisama@gmail.com"><i class="fas fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#解-BL-锁"><span class="level-left"><span class="level-item">1</span><span class="level-item">解 BL 锁</span></span></a></li><li><a class="level is-mobile" href="#开始-ROOT"><span class="level-left"><span class="level-item">2</span><span class="level-item">开始 ROOT</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#准备工作"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">准备工作</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#从橙狐的包中提取-recovery-img"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">从橙狐的包中提取 recovery.img</span></span></a></li><li><a class="level is-mobile" href="#Magisk的安装包"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">Magisk的安装包</span></span></a></li><li><a class="level is-mobile" href="#当前手机系统的-ROM-包"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">当前手机系统的 ROM 包</span></span></a></li><li><a class="level is-mobile" href="#发送到手机"><span class="level-left"><span class="level-item">2.1.4</span><span class="level-item">发送到手机</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Magisk-补-BOOT"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Magisk 补 BOOT</span></span></a></li><li><a class="level is-mobile" href="#刷入橙狐"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">刷入橙狐</span></span></a></li></ul></li><li><a class="level is-mobile" href="#拓展"><span class="level-left"><span class="level-item">3</span><span class="level-item">拓展</span></span></a></li><li><a class="level is-mobile" href="#参考"><span class="level-left"><span class="level-item">4</span><span class="level-item">参考</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">朷北</a><p class="is-size-7"><span>&copy; 2023 朷北</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
